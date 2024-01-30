@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img,
+svg {
+    vertical-align: middle;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+	font-family: "Montserrat", 'Gill Sans', sans-serif, 'Gill Sans MT', Calibri, 'Trebuchet MS';
+    background-color: rgb(55, 55, 55);
+    color: white;
+}
+
+/* NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+header {
+    background-color: rgb(15, 15, 15);
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    width: 100vw;
+    height: 5rem;
+}
+
+header img {
+    height: 4rem;
+}
+
+h1 {
+    margin-left: 1rem;
+    font-weight: 700;
+}
+
+header ul {
+    list-style: none;
+    column-gap: 1rem;
+    font-weight: 600;
+}
+
+header li {
+    cursor: pointer;
+}
+
+/* PRESETS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.vh-100 {
+    height: 100vh;
+}
+
+.w-100{
+	width: 100%;
+}
+
+.container {
+    max-width: 90%;
+}
+
+.mx-auto {
+    margin-inline: auto;
+}
+
+.ms-auto {
+    margin-inline-start: auto;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mx-1 {
+    margin-inline: 1rem;
+}
+
+.pt-1 {
+    padding-top: 1rem;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex-wrap-wrap {
+    flex-wrap: wrap;
+}
