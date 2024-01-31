@@ -1,10 +1,28 @@
+import React, {useState} from "react"
 export default function Navbar(){
+
+    const [blackBg, setBlackBg] = useState(false)
+
+    window.addEventListener("scroll", () => {
+
+        if(window.scrollY > 300){
+            setBlackBg(true)
+        } else{
+            setBlackBg(false)
+        }
+        
+    })
+    
+
+    const headerStyle = {backgroundColor: blackBg ? "rgb(255, 93, 34)" : "transparent"}
+
+
     return (
-        <header>
+        <header style={headerStyle}>
             
             <nav className="d-flex align-items-center container mx-auto">
                 <a href="#home">
-                    <div className="d-flex align-items-center">
+                    <div id="logo" className=" d-flex align-items-center">
                         <img src="src/assets/logo.png" alt="LOGO" />
                         <h1>SaltySweet</h1>
                     </div>
@@ -12,9 +30,9 @@ export default function Navbar(){
                 
                 
                 <ul className="d-flex align-items-center ms-auto">
-                    <li>HOME</li>
-                    <li>RECEPIES</li>
-                    <li>ABOUT US</li>
+                    <a href="#home"> <li>HOME</li> </a>
+                    <a href=""> <li>RECEPIES</li> </a>
+                    <a href=""> <li>ABOUT US</li> </a>
                 </ul>
 
             </nav>

@@ -1,3 +1,7 @@
+:root {
+    --primary-color: rgb(255, 93, 34);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -22,12 +26,16 @@ body {
 /* NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 header {
-    background-color: rgb(15, 15, 15);
+    position: fixed;
+    z-index: 99;
+    text-shadow: 0 0 0.5rem black;
+    transition: all 0.3s;
 }
 
 header a {
     color: white;
     text-decoration: none;
+    transition: all 0.3s;
 }
 
 nav {
@@ -39,7 +47,7 @@ header img {
     height: 4rem;
 }
 
-h1 {
+header h1 {
     margin-left: 1rem;
     font-weight: 700;
 }
@@ -50,9 +58,120 @@ header ul {
     font-weight: 600;
 }
 
-header li {
-    cursor: pointer;
+header ul a{
+    padding: 1rem 1rem;
 }
+
+header a:hover {
+    transform: scale(1.05);
+}
+
+/* MAIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+main {
+    overflow-y: hidden;
+}
+
+#hero {
+    position: relative;
+}
+
+#main-video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+}
+
+#hero-h1 {
+    font-size: clamp(3rem, 7vw, 6rem);
+    position: absolute;
+    text-shadow: 0 0 1rem black;
+    z-index: 3;
+}
+
+/* MAIN RECIPES  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+#presentation {
+    font-size: clamp(2rem, 3vw, 3rem);
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+#adviced-recipes h2{
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#show-recipes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 4rem;
+    row-gap: 2rem;
+}
+
+.card {
+    width: 20rem;
+    border: 1px white solid;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.card:hover{
+    transform: scale(1.025);
+    box-shadow: 0 0 1rem black;
+}
+
+.card img {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-info1, .card-info2 {
+    justify-content: space-evenly;
+    margin-block: 0.5rem;
+}
+
+.card-info1 svg {
+    color: var(--primary-color);
+    margin-right: 0.3rem;
+}
+
+marker {
+    color: var(--primary-color);
+}
+
+#adviced-recipes button{
+    border-radius: 100px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding-block: 1rem;
+    margin-block: 2rem;
+    transition: all 0.3s;
+}
+
+#adviced-recipes button a{
+    font-size: 1rem;
+    padding: 1rem 1.25rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#adviced-recipes button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 0.4rem var(--primary-color);
+}
+
 
 /* PRESETS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -66,6 +185,10 @@ header li {
 
 .container {
     max-width: 90%;
+}
+
+.container2{
+    max-width: 60%;
 }
 
 .mx-auto {
@@ -110,4 +233,20 @@ header li {
 
 .flex-wrap-wrap {
     flex-wrap: wrap;
+}
+
+/* big screen */
+@media screen and (min-width: 900px) {
+    
+    #show-recipes{
+        max-width: 70%;
+    }
+}
+
+/* small screen */
+@media screen and (max-width: 900px) {
+    
+    #show-recipes{
+        max-width: 79%;
+    }
 }
