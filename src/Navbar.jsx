@@ -23,7 +23,7 @@ export default function Navbar(){
             <nav className="d-flex align-items-center container mx-auto">
                 <a href="#home">
                     <div id="logo" className=" d-flex align-items-center">
-                        <img src="src/assets/logo.png" alt="LOGO" />
+                        <img src="https://i.imgur.com/2gL0byY.png" alt="LOGO" />
                         <h1>SaltySweet</h1>
                     </div>
                 </a>
