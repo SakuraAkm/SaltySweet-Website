@@ -3,6 +3,7 @@ import Navbar from "./Navbar.jsx"
 import Hero from "./Hero.jsx"
 import Card from "./Card.jsx"
 import MainRecipes from "./MainRecipes.jsx"
+import Form from "./Form.jsx"
 import Footer from "./Footer.jsx"
 
 function App() {
@@ -41,6 +42,8 @@ function App() {
         <Hero />
 
         <MainRecipes displayRecipes={displayRecipes}/>
+
+        <Form />
         
       </main>
 

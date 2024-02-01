@@ -24,25 +24,39 @@ body {
     color: white;
 }
 
+button{
+    border: none;
+    border-radius: 100px;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 0.4rem var(--primary-color);
+}
+
 /* NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 header {
     position: fixed;
     z-index: 99;
     text-shadow: 0 0 0.5rem black;
-    transition: all 0.3s;
+    transition: height 0.3s;
 }
 
 header a {
     color: white;
     text-decoration: none;
-    transition: all 0.3s;
 }
 
 nav {
     width: 100vw;
-    height: 5rem;
 }
+
 
 header img {
     height: 4rem;
@@ -59,6 +73,10 @@ header ul {
     font-weight: 600;
 }
 
+/* header ul li{
+    transition: all 0.3s;
+} */
+
 header ul a{
     padding: 1rem 1rem;
 }
@@ -67,7 +85,14 @@ header a:hover {
     transform: scale(1.05);
 }
 
-/* MAIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+header svg {
+    width: 10%;
+    height: 40%;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+/* HERO  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 main {
     overflow-y: hidden;
@@ -85,7 +110,7 @@ main {
 }
 
 #hero-h1 {
-    font-size: clamp(3rem, 7vw, 6rem);
+    font-size: clamp(2.5rem, 7vw, 6rem);
     position: absolute;
     text-shadow: 0 0 1rem black;
     z-index: 3;
@@ -112,7 +137,7 @@ main {
     align-items: center;
     flex-wrap: wrap;
     column-gap: 4rem;
-    row-gap: 2rem;
+    row-gap: 3rem;
 }
 
 .card {
@@ -121,6 +146,10 @@ main {
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s;
+}
+
+.card h1 {
+    margin-top: 0.5rem;
 }
 
 .card:hover{
@@ -136,9 +165,15 @@ main {
     border-top-right-radius: 8px;
 }
 
-.card-info1, .card-info2 {
+.card-info1{
     justify-content: space-evenly;
     margin-block: 0.5rem;
+}
+
+.card-info2 {
+    justify-content: space-evenly;
+    margin-top: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .card-info1 svg {
@@ -151,13 +186,9 @@ marker {
 }
 
 #adviced-recipes button{
-    border-radius: 100px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
     padding-block: 1rem;
-    margin-block: 2rem;
-    transition: all 0.3s;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 #adviced-recipes button a{
@@ -168,9 +199,49 @@ marker {
     font-weight: 600;
 }
 
-#adviced-recipes button:hover{
-    transform: scale(1.05);
-    box-shadow: 0 0 0.4rem var(--primary-color);
+/* FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+form {
+    background-image: url("https://wallpapercave.com/wp/wp4696909.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+form h1{
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+form input {
+    font-size: 1rem;
+    margin-block: 1rem;
+}
+
+form input, form button[type="submit"]{
+    margin-inline: 0.5rem;
+    border-radius: 100px;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    transition: all 0.3s;
+}
+
+form input {
+    background-color: white;
+}
+
+form input:focus{
+    outline: 1px solid var(--primary-color);
+    box-shadow: 0 0 0.5rem var(--primary-color);
+}
+
+form button {
+    margin-bottom: 0.5rem;
+}
+
+#form-ajax {
+    opacity: 0;
+    margin-bottom: 1.5rem;
 }
 
 /* FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -209,8 +280,12 @@ footer a {
 }
 
 
-
 /* PRESETS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.primary-color{
+    color: var(--primary-color);
+    display: inline-flex;
+}
 
 .vh-100 {
     height: 100vh;
@@ -274,16 +349,43 @@ footer a {
 
 /* big screen */
 @media screen and (min-width: 900px) {
+    nav{
+        display: flex;
+    }
     
     #show-recipes{
         max-width: 70%;
+    }
+
+    header svg {
+        display: none;
+    }
+
+    header ul {
+        margin-inline-start: auto;
     }
 }
 
 /* small screen */
 @media screen and (max-width: 900px) {
-    
+
+    header ul, header li {
+        text-align: center;
+    }
     #show-recipes{
-        max-width: 79%;
+        max-width: 75%;
+    }
+
+    .card {
+        width: 19rem;
+    }
+
+    .card img {
+        height: 13rem;
+    }
+
+    form input {
+        display: block;
+        margin-inline: auto;
     }
 }
