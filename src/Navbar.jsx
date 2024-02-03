@@ -4,29 +4,33 @@ export default function Navbar(){
     const [blackBg, setBlackBg] = useState(false)
     const [openedMenu, setOpenedMenu] = useState(false)
 
-    function openMenu(){
-        return setOpenedMenu(!openedMenu)
-    }
-
     window.addEventListener("scroll", () => {
-
         if(window.scrollY > 100){
             setBlackBg(true)
         } else{
             setBlackBg(false)
         }
-        
     })
+
+    function openMenu(){
+        return setOpenedMenu(!openedMenu)
+    }
+
+    // initialization of showStyle
+    let showStyle = {display: window.innerWidth > 900 ? 
+        "flex" : 
+        (openedMenu ? "block" : "none")}
 
     window.addEventListener("resize", (ShowStyle) => {
         if(window.innerWidth > 900){
             setOpenedMenu(false)
         }
+        // console.log(showStyle)
+        // console.log("opened menu: " + openedMenu)
+        // console.log("opened menu: " + window.innerWidth)
     })
 
-    let ShowStyle = {
-        display: openedMenu ? "block" : "none",
-    }
+    
     const headerStyle = {
         backgroundColor: blackBg ? "rgb(255, 93, 34)" : "transparent",
         height: openedMenu ? "15rem" : "5rem"
@@ -50,10 +54,10 @@ export default function Navbar(){
                     </svg>
                 </div>
                 
-                <ul style={ShowStyle} className="d-flex align-items-center">
-                    <a  style={ShowStyle} href="#home"> <li style={ShowStyle}>HOME</li> </a>
-                    <a  style={ShowStyle} href=""> <li style={ShowStyle}>RECEPIES</li> </a>
-                    <a  style={ShowStyle} href=""> <li style={ShowStyle}>ABOUT US</li> </a>
+                <ul style={showStyle} className="align-items-center">
+                    <a  style={showStyle} href="#home"> <li style={showStyle}>HOME</li> </a>
+                    <a  style={showStyle} href=""> <li style={showStyle}>RECEPIES</li> </a>
+                    <a  style={showStyle} href=""> <li style={showStyle}>ABOUT US</li> </a>
                 </ul>
 
             </nav>

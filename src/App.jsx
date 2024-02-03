@@ -13,26 +13,20 @@ function App() {
   useEffect( () => {
     fetch("https://dummyjson.com/recipes")
     .then(res => res.json())
-    .then(data => {
-      setRecipes(data.recipes)
-    })
+    .then(data => setRecipes(data.recipes) )
   }, [])
 
-  const arrRecipes = Object.values(recipes) // transform recipes in an array of objecet so I can map it
-  console.log(arrRecipes)
-
-  const displayRecipes = arrRecipes.map(item => {
+  const displayRecipes = recipes.map(item => {
     return <Card 
-    key = {item.id}
-    name = {item.name}
-    image = {item.image}
-    cuisine = {item.cuisine}
-    difficulty = {item.difficulty}
-    time = {item.prepTimeMinutes}
-    rating = {item.rating}
+      key = {item.id}
+      name = {item.name}
+      image = {item.image}
+      cuisine = {item.cuisine}
+      difficulty = {item.difficulty}
+      time = {item.prepTimeMinutes}
+      rating = {item.rating}
     />
   })
-  
 
   return (
     <>

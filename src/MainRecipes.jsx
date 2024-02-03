@@ -5,7 +5,7 @@ export default function MainRecipes(props){
                 <h2 className="text-center">Recipes Advices by Us!</h2>
                 
                 <div id="show-recipes" className="mx-auto">
-                    {props.displayRecipes.slice(-6)}
+                    {props.displayRecipes.slice(0, 6)}
                 </div>
 
                 <div className="d-flex justify-content-center">

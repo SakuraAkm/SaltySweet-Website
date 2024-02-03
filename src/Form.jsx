@@ -61,14 +61,6 @@ export default function Form(){
                         <div id="form-ajax" className="opacity-0">{formAjax}</div>
                     </div>
                 </div>
-
-                <div className="bg-form text-center">
-                    
-                </div>
-
-                <div className="bg-cover">
-                    
-                </div>
         </form>
     )
 }
