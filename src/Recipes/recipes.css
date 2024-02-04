@@ -73,6 +73,10 @@
     border-bottom-left-radius: 100px;
 }
 
+#recipes #show-recipes {
+    margin-block: 4rem;
+}
+
 @media screen and (max-width: 900px) {
     #input-recipes input {
         width: 100%;

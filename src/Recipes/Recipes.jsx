@@ -1,6 +1,6 @@
 import "./recipes.css"
 
-export default function Recipes() {
+export default function Recipes({displayRecipes}) {
     return (
         <main id="recipes">
             
@@ -22,8 +22,8 @@ export default function Recipes() {
         
             </div>
 
-            <div id="recipes-list">
-
+            <div id="show-recipes" className="container2 mx-auto">
+                {displayRecipes}
             </div>
             
         </main>
