@@ -1,0 +1,87 @@
+#recipes {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+#img-parent {
+    height: 50vh;
+    width: 100vw;
+    position: relative;
+}
+
+#img-recipes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://images7.alphacoders.com/109/1097602.jpg");
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    z-index: -2;
+}
+
+.recipe-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background-color: var(--cover-color);
+    z-index: -1;
+}
+
+#img-parent h1{
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 700;
+    text-shadow: 0 0 1.5rem black;
+}
+
+#input-recipes h1 {
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    margin-block: 2rem;
+}
+
+#input-all{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#input-all:focus-within input,
+#input-all:focus-within #search-icon {
+    outline: 1px solid var(--primary-color);
+    box-shadow: 0 0 1rem var(--primary-color);
+}
+
+#input-recipes input, #search-icon {
+    border: none;
+    color: white;
+    transition: all 0.3s;
+}
+
+#search-icon {
+    padding: 0.9rem 1.25rem;
+    background-color: var(--primary-color);
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    cursor: pointer;
+}
+
+#input-recipes input {
+    padding: 1rem 1.5rem;
+    background-color: rgb(88, 88, 88);
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+
+@media screen and (max-width: 900px) {
+    #input-recipes input {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    #input-recipes input {
+        width: 40%;
+    }
+}
+

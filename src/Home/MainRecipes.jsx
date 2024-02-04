@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom"
+
 export default function MainRecipes(props){
     return (
         <section id="adviced-recipes">
@@ -9,7 +11,7 @@ export default function MainRecipes(props){
                 </div>
 
                 <div className="d-flex justify-content-center">
-                    <button className=""><a href="#">Show More</a></button>
+                    <button className=""><Link to="/recipes">Show More</Link></button>
                 </div>
                 
         </section>

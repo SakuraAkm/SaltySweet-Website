@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from "react"
-import Navbar from "./Navbar.jsx"
 import Hero from "./Hero.jsx"
-import Card from "./Card.jsx"
+import Card from "../Card.jsx"
 import MainRecipes from "./MainRecipes.jsx"
 import Form from "./Form.jsx"
-import Footer from "./Footer.jsx"
+import "./home.css"
 
-function App() {
 
-  const [recipes, setRecipes] = React.useState([])
+function Home() {
+
+  const [recipes, setRecipes] = useState([])
 
   useEffect( () => {
     fetch("https://dummyjson.com/recipes")
@@ -19,6 +19,7 @@ function App() {
   const displayRecipes = recipes.map(item => {
     return <Card 
       key = {item.id}
+      id = {item.id}
       name = {item.name}
       image = {item.image}
       cuisine = {item.cuisine}
@@ -29,23 +30,16 @@ function App() {
   })
 
   return (
-    <>
-      <Navbar />
-
-      <main id="home">
+    <main id="home">
         <Hero />
 
         <MainRecipes displayRecipes={displayRecipes}/>
 
         <Form />
-        
-      </main>
-
-      <Footer />
-    </>
+    </main>
   )
 }
 
-export default App
+export default Home
 
 

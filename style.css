@@ -1,5 +1,6 @@
 :root {
     --primary-color: rgb(255, 93, 34);
+    --cover-color: rgba(43, 43, 43, 0.616);
 }
 
 * {
@@ -38,6 +39,16 @@ button:hover{
     transform: scale(1.05);
     box-shadow: 0 0 0.4rem var(--primary-color);
 }
+
+body::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 100px;
+}
+
 
 /* NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -89,53 +100,12 @@ header svg {
     margin-left: auto;
 }
 
-/* HERO  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-main {
-    overflow-y: hidden;
+input::placeholder {
+    font-family: 'Montserrat';
+    color: rgb(166, 166, 166);
 }
 
-#hero {
-    position: relative;
-}
-
-#main-video {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    position: absolute;
-}
-
-#hero-h1 {
-    font-size: clamp(2.5rem, 7vw, 6rem);
-    position: absolute;
-    text-shadow: 0 0 1rem black;
-    z-index: 3;
-}
-
-/* MAIN RECIPES  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-
-#presentation {
-    font-size: clamp(2rem, 3vw, 3rem);
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-}
-
-#adviced-recipes h2{
-    font-size: clamp(2rem, 3vw, 2.5rem);
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-#show-recipes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    column-gap: 4rem;
-    row-gap: 3rem;
-}
+/* CARDS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .card {
     width: 20rem;
@@ -143,6 +113,11 @@ main {
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s;
+}
+
+.card a {
+    color: white;
+    text-decoration: none;
 }
 
 .card h1 {
@@ -178,10 +153,6 @@ main {
     margin-right: 0.3rem;
 }
 
-marker {
-    color: var(--primary-color);
-}
-
 #adviced-recipes button{
     padding-block: 1rem;
     margin-top: 2rem;
@@ -194,84 +165,6 @@ marker {
     color: white;
     text-decoration: none;
     font-weight: 600;
-}
-
-/* FORM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-form{
-    position: relative;
-}
-
-.form {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-    z-index: 5;
-}
-
-.form::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("https://wallpapercave.com/wp/wp4696909.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-attachment: fixed;
-    z-index: -2;
-}
-
-.form::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(27, 27, 27, 0.623);
-    z-index: -1;
-}
-
-form h1{
-    padding-top: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-form p{
-    padding: 1rem;
-}
-
-
-form input {
-    font-size: 1rem;
-    margin-block: 1rem;
-}
-
-form input, form button[type="submit"]{
-    margin-inline: 0.5rem;
-    border-radius: 100px;
-    padding: 0.5rem 0.75rem;
-    border: none;
-    transition: all 0.3s;
-}
-
-form input {
-    background-color: white;
-}
-
-form input:focus{
-    outline: 1px solid var(--primary-color);
-    box-shadow: 0 0 0.5rem var(--primary-color);
-}
-
-form button {
-    margin-bottom: 0.5rem;
-}
-
-#form-ajax {
-    color: var(--primary-color);
-    text-shadow: 0 0 1.5rem black, 0 0 1.5rem black, 0 0 1.5rem black;
-    padding-bottom: 1rem;
 }
 
 /* FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -410,10 +303,6 @@ footer a {
         display: flex;
     }
     
-    #show-recipes{
-        max-width: 70%;
-    }
-
     header svg {
         display: none;
     }
@@ -428,21 +317,5 @@ footer a {
 
     header ul, header li {
         text-align: center;
-    }
-    #show-recipes{
-        max-width: 75%;
-    }
-
-    .card {
-        width: 19rem;
-    }
-
-    .card img {
-        height: 13rem;
-    }
-
-    form input {
-        display: block;
-        margin-inline: auto;
     }
 }

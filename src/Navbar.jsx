@@ -1,4 +1,6 @@
 import React, {useState} from "react"
+import {Link} from "react-router-dom" 
+
 export default function Navbar(){
 
     const [blackBg, setBlackBg] = useState(false)
@@ -42,12 +44,13 @@ export default function Navbar(){
             
             <nav className="container mx-auto">
                 <div style={navStyle} id="first-nav-row" className="d-flex align-items-center">
-                    <a href="#home">
+                    
+                    <Link to="/" >
                         <div id="logo" className=" d-flex align-items-center">
                             <img src="https://i.imgur.com/2gL0byY.png" alt="LOGO" />
                             <h1>SaltySweet</h1>
                         </div>
-                    </a>
+                    </Link>
                     
                     <svg onClick={openMenu} xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
                         <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
@@ -55,9 +58,17 @@ export default function Navbar(){
                 </div>
                 
                 <ul style={showStyle} className="align-items-center">
-                    <a  style={showStyle} href="#home"> <li style={showStyle}>HOME</li> </a>
-                    <a  style={showStyle} href=""> <li style={showStyle}>RECEPIES</li> </a>
-                    <a  style={showStyle} href=""> <li style={showStyle}>ABOUT US</li> </a>
+
+                    <Link to="/" style={showStyle} > 
+                        <li style={showStyle}>HOME</li> 
+                    </Link>
+                    <Link to="/recipes" style={showStyle} > 
+                        <li style={showStyle}>RECEPIES</li> 
+                    </Link>
+                    <Link to="/about" style={showStyle} > 
+                        <li style={showStyle}>ABOUT US</li> 
+                    </Link>
+
                 </ul>
 
             </nav>
