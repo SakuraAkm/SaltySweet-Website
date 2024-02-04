@@ -47,7 +47,7 @@ export default function Navbar(){
                     
                     <Link to="/" >
                         <div id="logo" className=" d-flex align-items-center">
-                            <img src="./src/assets/logo.png" alt="LOGO" />
+                            <img src="https://i.imgur.com/CYDsWl8.png" alt="LOGO" />
                             <h1>SaltySweet</h1>
                         </div>
                     </Link>
