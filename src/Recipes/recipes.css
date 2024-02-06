@@ -77,15 +77,125 @@
     margin-block: 4rem;
 }
 
+/* SINGLE RECIPE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.single-recipe h1{
+    font-size: clamp(2.5rem, 7vw, 3.5rem);
+}
+
+.recipe-presentation{
+    margin-top: 6rem;
+}
+
+.recipe-info{
+    text-align: left;
+}
+
+.recipe-info h1{
+    margin-bottom: 1.5rem;
+}
+
+.recipe-presentation img{
+    border-radius: 10px;
+    box-shadow: 0 0 2rem black;
+}
+
+.recipe-info h3 div{
+    margin-block: 0.5rem;
+}
+
+.single-recipe hr{
+    max-width: 90%;
+    margin-inline: auto;
+}
+
+.single-recipe svg{
+    margin-right: 0.25rem;
+    color: var(--primary-color);
+}
+
+.grey{
+    display: inline-flex;
+    color: grey;
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.ingredients-section, .instructions-section {
+    margin-block: 2rem;
+}
+
+.ingredients li::marker, .instructions li::marker{
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.ingredients li, .instructions li {
+    margin-block: 0.75rem;
+}
+
+.ingredients, .instructions {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.instructions{
+    list-style: decimal;
+}
+
+.instructions {
+    margin-left: 20vw;
+    max-width: 70%;
+}
+
+
 @media screen and (max-width: 900px) {
     #input-recipes input {
         width: 100%;
     }
+
+    .recipe-presentation{
+        flex-direction: column;
+        max-width: 80%;
+        margin-bottom: 3rem;
+    }
+
+    .recipe-presentation img{
+        width: 100%;
+    }
+
+    .recipe-info {
+        margin-top: 2rem;
+    }
+
 }
 
 @media screen and (min-width: 900px) {
     #input-recipes input {
         width: 40%;
+    }
+
+    .recipe-presentation {
+        justify-content: space-evenly;
+        max-width: 80%;
+        margin-bottom: 4rem;
+    }
+
+    .recipe-presentation img{
+        width: 35%;
+    }
+
+    .recipe-info{
+        margin-left: 3rem;
+    }
+
+    .recipe-info2{
+        font-size: 1.2rem;
+        margin-inline: auto;
+        max-width: 60%;
     }
 }
 

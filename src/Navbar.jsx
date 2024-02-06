@@ -7,7 +7,7 @@ export default function Navbar(){
     const [openedMenu, setOpenedMenu] = useState(false)
 
     window.addEventListener("scroll", () => {
-        if(window.scrollY > 100){
+        if(window.scrollY > 99){
             setBlackBg(true)
         } else{
             setBlackBg(false)

@@ -31,6 +31,8 @@ function App() {
     />
   })
 
+  console.log(recipes[0])
+
   return (
     <BrowserRouter>
       <Navbar />
@@ -40,7 +42,7 @@ function App() {
           <Route path="/" element={ <Home displayRecipes={displayRecipes}/> } />
           <Route path='/recipes' element={ <Recipes displayRecipes={displayRecipes} /> }/>
           <Route path='/about' element={ <About /> }/>
-          <Route path="/recipes/:id" element={ <SingleRecipe /> } />
+          <Route path="/recipes/:id" element={ <SingleRecipe recipes={recipes}/> } />
 
         </Routes>
 
