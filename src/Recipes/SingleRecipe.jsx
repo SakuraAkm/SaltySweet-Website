@@ -23,7 +23,7 @@ export default function SingleRecipe({recipes}) {
                             <div>Difficutly:</div>
                             <div>Total Time:</div>
                             <div>Calories:</div>
-                            <div>Rating: </div>
+                            <div>Rating:</div>
                         </h3>
 
                         <h3 className="container mx-auto">
