@@ -27,15 +27,20 @@ export default function Navbar(){
         if(window.innerWidth > 900){
             setOpenedMenu(false)
         }
-        // console.log(showStyle)
-        // console.log("opened menu: " + openedMenu)
-        // console.log("opened menu: " + window.innerWidth)
     })
 
+    // Move to the top everytime I click an <a>
+    const links = document.querySelectorAll("a")
+    links.forEach(link => {
+        link.addEventListener("click", (e) => {
+            window.scrollTo({top: 0, scroll: "smooth"})
+        })
+    })
     
     const headerStyle = {
         backgroundColor: blackBg ? "rgb(255, 93, 34)" : "transparent",
-        height: openedMenu ? "15rem" : "5rem"
+        height: openedMenu ? "15rem" : "5rem",
+        transition: "0.3s"
     }
     const navStyle = {height: "5rem"}
 
@@ -45,7 +50,7 @@ export default function Navbar(){
             <nav className="container mx-auto">
                 <div style={navStyle} id="first-nav-row" className="d-flex align-items-center">
                     
-                    <Link to="/" >
+                    <Link to="/">
                         <div id="logo" className=" d-flex align-items-center">
                             <img src="https://i.imgur.com/CYDsWl8.png" alt="LOGO" />
                             <h1>SaltySweet</h1>

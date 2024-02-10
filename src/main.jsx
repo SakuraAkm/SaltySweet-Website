@@ -16,6 +16,7 @@ function App() {
     fetch("https://dummyjson.com/recipes")
     .then(res => res.json())
     .then(data => setRecipes(data.recipes) )
+    console.log("got fetch")
   }, [])
 
   const displayRecipes = recipes.map(item => {
@@ -30,8 +31,6 @@ function App() {
       rating = {item.rating}
     />
   })
-
-  console.log(recipes[0])
 
   return (
     <BrowserRouter>

@@ -1,12 +1,16 @@
 import { useParams } from "react-router-dom"
 
 export default function SingleRecipe({recipes}) {
+
+    // this keep it from giving an error, I m gonna return loading till the recipes is not an empty array and the fetch works properly
+    if(!recipes.length) return <main id="loading">Loading...</main>
+
     const param = useParams()
     const currentRecipe = recipes.filter(arr => arr.id == param.id )
     
-    let ingredients = currentRecipe[0].ingredients.map(ing => <li key={ing}>{ing}</li>)
+    // for some reason recipes = [] if I update the webpage from there
+    const ingredients = currentRecipe[0].ingredients.map(ing => <li key={ing}>{ing}</li>)
     const instructions = currentRecipe[0].instructions.map(inst => <li key={inst}>{inst}</li>)
-    
 
     return (
         <main className="single-recipe">

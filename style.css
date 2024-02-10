@@ -49,6 +49,14 @@ body::-webkit-scrollbar-thumb {
     border-radius: 100px;
 }
 
+#loading {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 700;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
