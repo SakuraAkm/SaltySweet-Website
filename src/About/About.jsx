@@ -1,7 +1,7 @@
 import "./about.css"
 import "../../style.css"
-import aboutData from "./aboutData.js"
-import AboutCard from "./aboutCard.jsx"
+import aboutData from "./aboutData.jsx"
+import AboutCard from "./AboutCard.jsx"
 
 export default function About() {
 
