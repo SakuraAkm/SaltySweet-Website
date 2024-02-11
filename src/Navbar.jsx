@@ -5,27 +5,40 @@ export default function Navbar(){
 
     const [blackBg, setBlackBg] = useState(false)
     const [openedMenu, setOpenedMenu] = useState(false)
+    const [showList, setShowList] = useState(window.innerWidth > 900 ? true : false)
 
     window.addEventListener("scroll", () => {
-        if(window.scrollY > 99){
+        if(window.scrollY > 50){
             setBlackBg(true)
-        } else{
+        } else if(window.scrollY <= 50 && openedMenu){
+            setBlackBg(true)
+        } else if(window.scrollY <= 50 && !openedMenu){
             setBlackBg(false)
         }
     })
 
     function openMenu(){
-        return setOpenedMenu(!openedMenu)
+        setOpenedMenu(!openedMenu)
+        setShowList(!showList)
+        if(window.scrollY < 50){
+            if(openedMenu){
+                setBlackBg(false)
+            } else {
+                setBlackBg(true)
+            } 
+        } else {
+            setBlackBg(true)
+        } 
     }
 
-    // initialization of showStyle
-    let showStyle = {display: window.innerWidth > 900 ? 
-        "flex" : 
-        (openedMenu ? "block" : "none")}
-
-    window.addEventListener("resize", (ShowStyle) => {
+    // window resize behaviour for the navbar
+    window.addEventListener("resize", () => {
         if(window.innerWidth > 900){
             setOpenedMenu(false)
+            setShowList(true)
+        } else {
+            setOpenedMenu(false)
+            setShowList(false)
         }
     })
 
@@ -36,7 +49,10 @@ export default function Navbar(){
             window.scrollTo({top: 0, scroll: "smooth"})
         })
     })
-    
+
+    const listStyle = {
+        display : showList ? "block" : "none"
+    }
     const headerStyle = {
         backgroundColor: blackBg ? "rgb(255, 93, 34)" : "transparent",
         height: openedMenu ? "15rem" : "5rem",
@@ -62,18 +78,19 @@ export default function Navbar(){
                     </svg>
                 </div>
                 
-                <ul style={showStyle} className="align-items-center">
+                <ul style={listStyle} className="align-items-center">
 
-                    <Link to="/" style={showStyle} > 
-                        <li style={showStyle}>HOME</li> 
-                    </Link>
-                    <Link to="/recipes" style={showStyle} > 
-                        <li style={showStyle}>RECEPIES</li> 
-                    </Link>
-                    <Link to="/about" style={showStyle} > 
-                        <li style={showStyle}>ABOUT US</li> 
-                    </Link>
-
+                    <li style={listStyle}>
+                        <Link to="/">HOME</Link>
+                    </li> 
+                    
+                    <li style={listStyle}>
+                        <Link to="/recipes">RECEPIES</Link>
+                    </li> 
+                    
+                    <li style={listStyle}>
+                        <Link to="/about">ABOUT US</Link>
+                    </li> 
                 </ul>
 
             </nav>

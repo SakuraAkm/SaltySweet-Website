@@ -94,7 +94,7 @@ header ul {
 }
 
 header ul a{
-    padding: 1rem 1rem;
+    padding: 0.8rem 2rem;
 }
 
 header a:hover {
@@ -319,9 +319,11 @@ footer a {
         display: none;
     }
 
-    header ul {
+    header ul, header li {
         margin-inline-start: auto;
+        display: flex !important;
     }
+    
 }
 
 /* small screen */
@@ -329,5 +331,10 @@ footer a {
 
     header ul, header li {
         text-align: center;
+        display: none;
+    }
+
+    header li {
+        margin-block: 1.5rem;
     }
 }
