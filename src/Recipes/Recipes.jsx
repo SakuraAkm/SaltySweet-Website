@@ -17,7 +17,9 @@ export default function Recipes({displayRecipes}) {
             const recipeCuisine = recipe.props.cuisine.toLowerCase()
             const recipeDifficulty = recipe.props.difficulty.toLowerCase()
 
-            if(recipeName.includes(searchBar) || recipeCuisine.includes(searchBar) || recipeDifficulty.includes (searchBar)){
+            if(recipeName.includes(searchBar.toLocaleLowerCase()) || 
+                recipeCuisine.includes(searchBar.toLocaleLowerCase()) || 
+                recipeDifficulty.includes (searchBar.toLocaleLowerCase())){
                 return true
             }
             })
